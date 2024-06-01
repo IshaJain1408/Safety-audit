@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Builder</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.min.js" defer></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body class="bg-gray-100">
+        <!-- Navbar -->
+
+    <nav class="bg-white shadow-md p-4 flex justify-start items-center">
+        <div class="flex items-center">
+            <i class="fas fa-shield-alt text-blue-500 text-2xl mr-2"></i>
+            <span class="text-xl font-bold text-purple-600">Safety Audit</span>
+        </div>
+        <ul class="flex space-x-4   ml-4">
+            <li><i class="fas fa-arrow-left text-black mr-1"></i>   
+             
+              </li>
+            <li>   <i class="fas fa-arrow-right text-black mr-1"></i></li>
+            <li>                <i class="fas fa-scissors text-black  mr-1"></i>
+            </li>
+            <li>                <i class="fas fa-copy text-black mr-1"></i>
+            </li>
+            <li>                  <i class="fas fa-address-book text-black mr-1"></i></i>
+            </li>
+        </ul>
+    </nav>
+<div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-md p-4" >
+ 
+        <h2 class="text-lg font-bold mb-4">Charts</h2>
+        <ul class="flex items-center gap-2 space-x-2 ...">
+            <li class="mb-2"><a href="#" class="flex items-center"><i class="fas fa-chart-bar"></i> </a></li>
+            <li class="mb-2"><a href="#" class="flex items-center"><i class="fas fa-chart-line "></i></a></li>
+            <li class="mb-2"><a href="#" class="flex items-center"><i class="fas fa-chart-pie "></i> </a></li>
+            <li class="mb-2"><a href="#" class="flex items-center"><i class="fas fa-chart-area "></i> </a></li>
+            <li class="mb-2"><a href="#" class="flex items-center"><i class="fas fa-chart-scatter "></i> </a></li>
+
+        </ul>
+        
+        <h2 class="text-lg font-bold mt-6 mb-4">Form Fields</h2>
+        <div>
+            <input type="text" placeholder="Search..." class="w-full px-3 py-2 border rounded mb-4">
+            <ul>
+                <li class="mb-2" x-data="{ open: false }">
+                    <div @click="open = !open" class="flex justify-between items-center cursor-pointer">
+                    <h1 class="font-semibold"><i class="fas mr-1" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i> <i class="fa-solid fa-border-none mr-1"></i>Facility Complaints
+                        </h1>
+                        <!-- <span class="font-semibold">Facility Complaints</span> -->
+                    </div>
+                    <ul x-show="open" x-transition class="ml-4 mt-2">
+                        <li class="mb-2"> <i class="fas fa-exclamation mr-2"></i>Complaint</li>
+                        <li class="mb-2"><i class="fas fa-plus mr-2"></i>Created On</li>
+                        <li class="mb-2"> <i class="fas fa-calendar-days mr-2"></i>Date Of Execution</li>
+                    </ul>
+                </li>
+                <li class="mb-2" x-data="{ open: false }">
+                    <div @click="open = !open" class="flex justify-between items-center cursor-pointer">
+                       
+                        <h1 class="font-semibold"><i class="fas mr-2" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i><i class="fa-solid fa-border-none mr-1"></i>Service Requests
+                        </h1>
+                    </div>
+                    <ul x-show="open" x-transition class="ml-4 mt-2">
+                        <li class="mb-2"> <i class="fas fa-exclamation mr-2"></i>Complaint</li>
+                        <li class="mb-2"><i class="fas fa-plus mr-2"></i>Created On</li>
+                        <li class="mb-2"> <i class="fas fa-calendar-days mr-2"></i>Date Of Execution</li>
+                    </ul>
+                </li>
+                <li class="mb-2" x-data="{ open: false }">
+                    <div @click="open = !open" class="flex justify-between items-center cursor-pointer">
+                       
+                        
+                        <h1 class="font-semibold"><i class="fas mr-2" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i><i class="fa-solid fa-border-none mr-1"></i>Subscriptions
+                        </h1>
+                    </div>
+                    <ul x-show="open" x-transition class="ml-4 mt-2">
+                        <li class="mb-2"> <i class="fas fa-exclamation mr-2"></i>Complaint</li>
+                        <li class="mb-2"><i class="fas fa-plus mr-2"></i>Created On</li>
+                        <li class="mb-2"> <i class="fas fa-calendar-days mr-2"></i>Date Of Execution</li>
+                    </ul>
+                </li>
+                <li class="mb-2" x-data="{ open: false }">
+                    <div @click="open = !open" class="flex justify-between items-center cursor-pointer">
+                       
+                        <h1 class="font-semibold"><i class="fas mr-2" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i><i class="fa-solid fa-border-none mr-1"></i>Project
+                        </h1>
+                    </div>
+                    <ul x-show="open" x-transition class="ml-4 mt-2">
+                        <li class="mb-2"> <i class="fas fa-exclamation mr-2"></i>Complaint</li>
+                        <li class="mb-2"><i class="fas fa-plus mr-2"></i>Created On</li>
+                        <li class="mb-2"> <i class="fas fa-calendar-days mr-2"></i>Date Of Execution</li>
+                    </ul>
+                </li>
+                <li class="mb-2" x-data="{ open: false }">
+                    <div @click="open = !open" class="flex justify-between items-center cursor-pointer">
+                   
+                        <h1 class="font-semibold"><i class="fas mr-2" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i><i class="fa-solid fa-border-none mr-1"></i>Contracts
+                        </h1>
+                    </div>
+                    <ul x-show="open" x-transition class="ml-4 mt-2">
+                        <li class="mb-2"> <i class="fas fa-exclamation mr-2"></i>Complaint</li>
+                        <li class="mb-2"><i class="fas fa-plus mr-2"></i>Created On</li>
+                        <li class="mb-2"> <i class="fas fa-calendar-days mr-2"></i>Date Of Execution</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <!-- Main Content -->
+    <div class="flex-1 p-6 ">
+        <div class="border bg-white p-4">
+        <h1 class="text-2xl font-bold mb-6">Monthly Report</h1>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white shadow p-4">
+                <div class="flex justify-between items-center mb-4">
+
+                    <i class="fas fa-filter"></i>
+                    <i class="fas fa-ellipsis"></i>                        
+
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-md font-semibold">Work Orders By Status</h2>
+                </div>
+                <div>
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+            <div class="bg-white shadow p-4">
+                <div class="flex justify-between items-center mb-4">
+
+                    <i class="fas fa-filter"></i>
+                    <i class="fas fa-ellipsis"></i>                        
+
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-md font-semibold">Service Requests</h2>
+                </div>
+                <div>
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="bg-white shadow p-4 mt-4 ">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex space-x-4">
+                    <div>
+                        <i class="fas fa-filter"></i>
+
+                        <select id="region" class="border-0 rounded px-1 py-1">
+
+                            <option selected>Region</option>
+                            <option>Region 1</option>
+                            <option>Region 2</option>
+                        </select>
+                    </div>
+                  
+                    <div>
+
+                        <select id="country" class="border-0 rounded px-1 py-1">
+                            <option selected>Country</option>
+                            <option>USA</option>
+                            <option>India</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            <div>
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Form Settings -->
+    <div class="w-64 bg-white shadow-md p-4">
+        <h2 class="text-lg font-bold mb-4">Form Settings</h2>
+        <form class="border p-2">
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium">Name</label>
+                <input type="text" id="name" class="w-full border rounded px-2 py-1">
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium">Description</label>
+                <input type="text" id="description" class="w-full border rounded px-2 py-1">
+            </div>
+          
+        </form>
+        <div class="flex justify-center py-2">
+            <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded flex items-center ">
+                <i class="fas fa-pencil-alt mr-2" ></i> Design <i class="fa-solid fa-arrow-right-from-bracket ml-2"></i>
+            </button>
+        </div>
+    </div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx1 = document.getElementById('chart1').getContext('2d');
+    var chart1 = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Demo D.', 'Did Not L.', 'Did Not Rep.', 'In Folder'],
+            datasets: [{
+                label: 'Status',
+                data: [150, 320, 290, 180],
+                backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                borderColor: 'rgba(99, 102, 241, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+    
+    var ctx2 = document.getElementById('chart2').getContext('2d');
+    var chart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Demo D.', 'Did Not L.', 'Did Not Rep.', 'In Folder'],
+            datasets: [{
+                label: 'Requests',
+                data: [100, 250, 310, 120],
+                backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                borderColor: 'rgba(99, 102, 241, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+    
+    var ctx3 = document.getElementById('chart3').getContext('2d');
+    var chart3 = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Demo D.', 'Did Not L.', 'Did Not Rep.', 'In Folder'],
+            datasets: [{
+                label: 'Status',
+                data: [90, 200, 260, 140],
+                backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                borderColor: 'rgba(99, 102, 241, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+   
+</script>
+</body>
+</html>
